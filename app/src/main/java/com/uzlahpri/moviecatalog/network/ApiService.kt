@@ -1,21 +1,28 @@
 package com.uzlahpri.moviecatalog.network
 
-import android.telecom.Call
-import com.uzlahpri.moviecatalog.model.PopularResponse
-import com.uzlahpri.moviecatalog.model.UpcomingResponse
+import com.uzlahpri.moviecatalog.model.movie.MovieUpcomingItemResponse
+import com.uzlahpri.moviecatalog.model.movie.PopularResponse
+import com.uzlahpri.moviecatalog.model.movie.UpcomingResponse
+import com.uzlahpri.moviecatalog.model.tv.TVPopularItemResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ApiService {
-    @GET ("/movie/popular")
+    @GET ("movie/popular")
     fun getPopular(
         @Query("api_key") apiKey: String,
         @Query("page") page : Int
     ): retrofit2.Call<PopularResponse>
 
-    @GET ("/movie/upcoming")
+    @GET ("movie/upcoming")
     fun getUpcoming(
         @Query("api_key") apiKey: String,
         @Query("page") page : Int
-    ): retrofit2.Call<UpcomingResponse>
+    ): retrofit2.Call<MovieUpcomingItemResponse>
+
+    @GET ("tv/popular")
+    fun getTVPopular(
+        @Query("api_key") apiKey: String,
+        @Query("page") page : Int
+    ): retrofit2.Call<TVPopularItemResponse>
 }
