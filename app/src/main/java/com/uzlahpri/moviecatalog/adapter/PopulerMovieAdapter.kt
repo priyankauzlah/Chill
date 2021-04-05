@@ -9,7 +9,6 @@ import com.uzlahpri.moviecatalog.BuildConfig
 import com.uzlahpri.moviecatalog.R
 import com.uzlahpri.moviecatalog.model.tv.MovieItemResponse
 import kotlinx.android.synthetic.main.item_popular_movie.view.*
-import kotlinx.android.synthetic.main.item_upcoming_movie.view.*
 
 class PopulerMovieAdapter(var listMovie: List<MovieItemResponse>) :
     RecyclerView.Adapter<PopulerMovieAdapter.MovieViewHolder>() {
@@ -21,7 +20,7 @@ class PopulerMovieAdapter(var listMovie: List<MovieItemResponse>) :
                     .load(BuildConfig.IMAGE_URL + movies.poster_path)
                     .into(iv_movie_poster)
                 tv_title_movie.text = movies.title
-                tv_desc_popular.text = movies.overview
+                tv_desc_movie.text = movies.overview
             }
         }
     }
