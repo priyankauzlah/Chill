@@ -20,6 +20,8 @@ class PopularTVAdapter(var listTvPopular: List<TVPopularItemResponse>) :
                     .into(iv_tv_popular)
                 tv_title_tv_popular.text = tvpopular.name
                 tv_language_tv_popular.text = tvpopular.original_language
+                tv_desc_tv_popular.text = tvpopular.overview
+                tv_release_tv_popular.text = tvpopular.first_air_date
             }
         }
 

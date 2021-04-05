@@ -8,14 +8,14 @@ import com.bumptech.glide.Glide
 import com.uzlahpri.moviecatalog.BuildConfig
 import com.uzlahpri.moviecatalog.R
 import com.uzlahpri.moviecatalog.model.movie.UpcomingResponse
-import kotlinx.android.synthetic.main.item_popular_movie.view.*
 import kotlinx.android.synthetic.main.item_upcoming_movie.view.*
 
-class UpcomingMovieAdapter(val listUpcoming : List<UpcomingResponse>) : RecyclerView.Adapter<UpcomingMovieAdapter.UpcomingMovieViewHolder>(){
+class UpcomingMovieAdapter(val listUpcoming: List<UpcomingResponse>) :
+    RecyclerView.Adapter<UpcomingMovieAdapter.UpcomingMovieViewHolder>() {
 
-    class UpcomingMovieViewHolder(val view : View) : RecyclerView.ViewHolder(view){
-        fun bind(upcomingMovies : UpcomingResponse){
-            with(itemView){
+    class UpcomingMovieViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+        fun bind(upcomingMovies: UpcomingResponse) {
+            with(itemView) {
                 Glide.with(context)
                     .load(BuildConfig.IMAGE_URL + upcomingMovies.poster_path)
                     .into(iv_upcoming)
@@ -26,11 +26,10 @@ class UpcomingMovieAdapter(val listUpcoming : List<UpcomingResponse>) : Recycler
         }
     }
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): UpcomingMovieAdapter.UpcomingMovieViewHolder {
-        return UpcomingMovieViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_upcoming_movie, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UpcomingMovieAdapter.UpcomingMovieViewHolder {
+        return UpcomingMovieViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.item_upcoming_movie, parent, false)
+        )
     }
 
     override fun onBindViewHolder(

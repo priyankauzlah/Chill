@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/black_main"
+    android:layout_marginTop="@dimen/_10dp"
     android:layout_height="wrap_content">
 
     <ImageView
@@ -15,13 +18,14 @@
 
     <TextView
         android:id="@+id/tv_title_upcoming"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="269dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:text="@string/title"
         android:textSize="18sp"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -30,14 +34,15 @@
 
     <TextView
         android:id="@+id/tv_desc_upcoming"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="258dp"
+        android:layout_height="81dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:ellipsize="end"
         android:maxLines="3"
         android:text="@string/description"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/tv_date_upcoming"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -52,6 +57,10 @@
         android:layout_marginStart="16dp"
         android:text="@string/_12_04_21"
         android:textSize="@dimen/_10sp"
+        android:textColor="@color/black_main"
+        android:background="@drawable/background_gray"
+        android:paddingStart="@dimen/_5dp"
+        android:paddingEnd="@dimen/_5dp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_upcoming"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

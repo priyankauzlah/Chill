@@ -4,25 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="25dp"
-    android:layout_marginBottom="@dimen/_30dp"
+    android:layout_marginBottom="50dp"
+    android:background="@color/black_main"
     tools:context=".ui.movie.MovieFragment">
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/black_main"
         android:layout_margin="@dimen/_16dp">
 
         <TextView
             android:id="@+id/tv_popular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="@string/popular"
             android:textSize="28sp"
+            android:textColor="@color/white"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/poppins_semibold"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -32,12 +33,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="16dp"
-            tools:listitem="@layout/item_popular_movie"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_popular" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_popular"
+            tools:listitem="@layout/item_popular_movie" />
 
         <TextView
             android:id="@+id/tv_upcoming"
@@ -46,7 +47,9 @@
             android:layout_marginTop="25dp"
             android:text="@string/upcoming"
             android:textSize="28sp"
+            android:textColor="@color/white"
             android:textStyle="bold"
+            android:fontFamily="@font/poppins_semibold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +58,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_upcoming"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="1000dp"
+            android:layout_marginTop="@dimen/_16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

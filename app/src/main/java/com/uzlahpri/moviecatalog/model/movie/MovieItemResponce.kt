@@ -7,6 +7,9 @@ data class MovieItemResponse(
     val poster_path: String,
 
     @SerializedName("title", alternate = ["name"])
-    val title: String
+    val title: String,
+
+    @SerializedName("overview")
+    val overview: String
 
 )
